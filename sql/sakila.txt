@@ -1,0 +1,133 @@
+
+select distinct last_name from actor;
+select last_name from actor here last_name='Zellweger';
+select count(last_name) from actor group by last_name;
+select last_name,count(last_name) from actor group by last_name order by last_name desc;
+select last_name, count(last_name) as lname from actor group by last_name order by lname desc;
+select * from actor where first_name='Penelope';
+
+
+practice questions:
+
+1.Query the actor table and count how many actors are there.
+2.query the actor table and count how many distinct first_name are there.
+3.query the actor table and count how many distinct last_name_name are there.
+4.find which first_name and last_name is most used in data.
+5.group the data by first_name.
+6.group the data by first_name.
+7.group the data by first_name and order in desc order.
+8.find all the actors detail whose first_name is 'Penelope'.
+9.find all the actors detail whose first_name is 'Penelope' order them by last_name.
+
+group by film
+1.group the film data on rental_duration.
+2.display all the rating of film.
+
+select rating from film group by rating ;
+select rating, count(rating) from film group by rating ;
+
+3.find title from film whose replacement_cost is more than 20.
+4.find title from film whose rental_rate is more than 4.
+5.find title whose replacement_cost is more than 20 and rental_rate is more than 4 and raing='R'.
+6.count how many such title are there.
+7.how many customer have first_name='Terry'.
+8.order the customer by store_id, first_name.
+9.find 10 first paid customer from payment.
+10.find 5 short movie name.
+
+BETWEEn
+11.
+12.select amount where date between '2007-02-15' and '2007-02-16 'from payment 
+
+IN
+13. select title,rating from film where rating in ('R', 'G');
+
+LIKE and ILIKE 
+ILIKE: not case sensitive
+LIKE is case sensitive
+
+select title,rating from film where title ilike 'sn%'
+
+WILDCARD(underscore)--single character
+select title,rating from film where title like '_en%'
+select * from film where title like 'S%' and title like '%s' 
+select * from film where title like 'S%s' 
+
+select * from film where title like '_er%';
+
+AGGREGATE FUNCTION
+AVG(), COUNT(), MAX(),MIN(), SUM()
+
+select ROUND(AVG(amount),2) from payment;
+select MAX(amount) as max_amt,MIN(amount) as min_amt,AVG(amount) as avg_amt from payment;
+
+group by customer_id on payment
+select customer_id, sum(amount) as total from payment
+group by customer_id;
+
+select customer_id, count(amount) as total from payment
+group by customer_id order by total desc;
+
+select customer_id,staff_id, sum(amount) as total from payment
+group by customer_id,staff_id 
+
+
+
+*******************************************************************
+LEFT VS INNER JOIN
+**************************************************************
+
+Tables Example
+
+staff Table (Left Table)
+username	address_id
+John	    1
+Alice	    2
+Bob	        3
+Sarah	    NULL
+
+
+address Table
+address_id	district	phone	    city_id
+1	        Central	    1234567	    10
+2	        West    	7654321	    NULL
+
+
+city Table
+city_id	 city	        country_id
+10	     Ranchi          100
+
+country Table
+country_id	country
+100	         INDIA
+
+
+INNER JOIN Result
+
+SELECT s.username, a.district, a.phone, c.city, cr.country
+FROM staff s
+INNER JOIN address a ON a.address_id = s.address_id
+INNER JOIN city c ON c.city_id = a.city_id
+INNER JOIN country cr ON cr.country_id = c.country_id;
+
+username	district	phone	city	country
+John	    Central	  1234567	Ranchi	USA
+
+Only one row matches all conditions (address, city, and country).
+
+
+LEFT JOIN Result
+
+SELECT s.username, a.district, a.phone, c.city, cr.country
+FROM staff s
+LEFT JOIN address a ON a.address_id = s.address_id
+LEFT JOIN city c ON c.city_id = a.city_id
+LEFT JOIN country cr ON cr.country_id = c.country_id;
+username	district	phone	 city	 country
+John	    Central	    1234567	 Ranchi	 India
+Alice	    West 	    7654321	 NULL	 NULL
+Bob	        NULL	    NULL	 NULL	 NULL
+Sarah	    NULL	    NULL	 NULL	 NULL
+
+All staff rows are included.
+Rows without matching address, city, or country contain NULL values.

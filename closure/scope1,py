@@ -1,0 +1,15 @@
+x = 87
+
+def fun1():
+    x = 100
+    def fun2():
+        # x =200
+        print('print from fun2: ',x)
+        def fun3():
+            print('print from fun3: ',x)
+        fun3()
+
+    
+    fun2()
+
+fun1()

@@ -1,0 +1,7 @@
+Control Problems
+
+1.If ages of Ram, Shyam and Ajay are input through the keyboard, write a program to determine the youngest of the three.
+2.Given three points (x1, y1), (x2, y2) and (x3, y3), write a program to check if all the three points fall on one straight line.
+3.Given the coordinates (x, y) of center of a circle and its radius, write a program that will determine whether a point lies inside the circle, on the circle or outside the circle.
+4.Given a point (x, y), write a program to find out if it lies on the X-axis, Y-axis or on the origin.
+5.If the three sides of a triangle are entered through the keyboard, write a program to check whether the triangle is isosceles, equilateral, scalene or right-angled triangle.

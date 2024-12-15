@@ -1,0 +1,16 @@
+STEPS TO CREATE A FLASK APP 
+
+1. make directory
+2. define app.py inside that directory 
+3. import all basics to app.py 
+4. configure database
+5. create model for your app
+6. create routes for GET and POST
+7. create a templates folder and define html files as per need
+8. create view to get the data details
+9. create static folder for css
+10. go to terminal and python console
+11. initiate database
+# app.app_context().push()
+# db.create_all()
+

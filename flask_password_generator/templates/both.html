@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Random Password</title>
+</head>
+<body>
+    <h1>Generate a Random Password</h1>
+    <form action="" method="post">
+        <label for="length">Enter the desired length:</label>
+        <input type="number" id="length" name="length" min="1" required>
+        <button type="submit">Generate Password</button>
+    </form>
+    {% if password %}
+        <h2>Your Generated Password:</h2>
+        <p>{{ password }}</p>
+    {% endif %}
+</body>
+</html>

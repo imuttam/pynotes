@@ -1,0 +1,49 @@
+
+# How to Use vi Editor to Write, Save, and Edit a Python Script
+
+### 1. Opening vi and Writing a Script
+1. To start editing a file, open your WSL terminal and type:
+   ```bash
+   vi filename.py
+   ```
+   If the file doesn’t exist, `vi` will create a new file with that name.
+
+2. You will be in **Normal Mode** by default. To start typing, press `i` to enter **Insert Mode**.
+
+3. Write your Python script or text.
+
+### 2. Saving Your Work
+1. After you finish writing, save the file by first exiting Insert Mode:
+   - Press `Esc` to leave Insert Mode and return to Normal Mode.
+
+2. To save and quit the file:
+   - Type `:wq` and press `Enter`.
+
+   Alternatively:
+   - To save without quitting, type `:w` and press `Enter`.
+   - Then type `:q` to quit if you’re done.
+
+### 3. Re-opening and Editing the Saved File
+1. Open the file again if you closed it:
+   ```bash
+   vi filename.py
+   ```
+
+2. To make changes:
+   - Navigate to the part you want to edit using the arrow keys (or `h`, `j`, `k`, `l`).
+   - Press `i` to enter **Insert Mode** and start editing.
+
+3. After making your changes:
+   - Press `Esc` to return to **Normal Mode**.
+   - Save and quit by typing `:wq`.
+
+### Additional Commands
+- `:w`: Save changes without quitting.
+- `:q`: Quit `vi`.
+- `:q!`: Quit without saving changes.
+- `u`: Undo the last change (in Normal Mode).
+- `/text`: Search for "text" within the file.
+
+---
+
+This guide provides a quick way to work with files in `vi` editor, from writing and saving to reopening and editing.
