@@ -11,6 +11,7 @@ STEPS TO CREATE A FLASK APP
 9. create static folder for css
 10. go to terminal and python console
 11. initiate database
+
 # app.app_context().push()
 # db.create_all()
 
