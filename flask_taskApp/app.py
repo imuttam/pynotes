@@ -29,12 +29,14 @@ def add_task():
     date  =   request.form['date']
     status =  request.form.get('status')
 
-    try:
-        # Parse the ISO-8601 date string to a Python datetime object
-        date = datetime.fromisoformat(date)  
-    except ValueError:
-        # Handle invalid date formats gracefully
-        return "Invalid date format", 400
+    date = datetime.fromisoformat(date)
+    
+    # try:
+    #     # Parse the ISO-8601 date string to a Python datetime object
+    #     date = datetime.fromisoformat(date)  
+    # except ValueError:
+    #     # Handle invalid date formats gracefully
+    #     return "Invalid date format", 400
     
     new_task = Task(name=name, date=date, status=status)
     db.session.add(new_task)
